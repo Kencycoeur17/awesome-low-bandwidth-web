@@ -1,0 +1,17 @@
+name: Suggest a resource
+description: Suggest a relevant, maintained resource
+title: 'Resource: '
+labels: []
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Resource URL
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why should this resource be included?
+    validations:
+      required: true
