@@ -1,0 +1,15 @@
+name: Link check
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * 1'
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check documentation links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: '--no-progress --exclude-mail --accept 200,206,429 README.md guides/**/*.md checklists/**/*.md CONTRIBUTING.md'
+          fail: false
